@@ -42,6 +42,7 @@ using System.Xml;
 
 
 #if NETFX_CORE
+using Attribute=MarkerMetro.Unity.WinLegacy.Attribute;
 using MarkerMetro.Unity.WinLegacy.IO;
 using MarkerMetro.Unity.WinLegacy.Reflection;
 using System.Linq;
@@ -1305,7 +1306,7 @@ namespace Pathfinding.Serialization.JsonFx
 			if (objType.GetCustomAttributes (typeof(JsonOptInAttribute),true).Length != 0) {
 #if NETFX_CORE
                 var customAttrs = member.GetCustomAttributes(typeof(JsonMemberAttribute), true);
-                Attribute[] customAttrsArr = customAttrs == null ? null : customAttrs.ToArray();
+                System.Attribute[] customAttrsArr = customAttrs == null ? null : customAttrs.ToArray();
                 if (customAttrs == null ||customAttrsArr == null || customAttrsArr.Length == 0)
                 {
 #else

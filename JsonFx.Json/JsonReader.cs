@@ -269,12 +269,13 @@ namespace Pathfinding.Serialization.JsonFx
 			return this.Read(type, false);
 		}
 
+        /*
 		/// <summary>
 		/// Convert from JSON string to Object graph of specific Type
 		/// </summary>
 		/// <param name="type"></param>
 		/// <returns></returns>
-		/*public T Deserialize<T>()
+		public T Deserialize<T>()
 		{
 			// should this run through a preliminary test here?
 			return (T)this.Read(typeof(T), false);
@@ -333,8 +334,10 @@ namespace Pathfinding.Serialization.JsonFx
 					} catch (JsonTypeCoercionException e) {
 #if !NETFX_CORE
 						Console.WriteLine ("Could not cast to dictionary for converter processing. Ignoring field.\n"+e);
+#else
+                        System.Diagnostics.Debug.WriteLine("Could not cast to dictionary for converter processing. Ignoring field.\n"+e);
 #endif
-					}
+                    }
 					return null;
 					
 				}

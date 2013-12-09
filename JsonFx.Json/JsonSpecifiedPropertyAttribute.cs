@@ -31,6 +31,10 @@
 using System;
 using System.Reflection;
 
+#if NETFX_CORE 
+using Attribute=MarkerMetro.Unity.WinLegacy.Attribute;
+#endif
+
 namespace Pathfinding.Serialization.JsonFx
 {
 	/// <summary>

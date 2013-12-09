@@ -65,12 +65,15 @@ namespace Pathfinding.Serialization.JsonFx
 			ICustomAttributeProvider provider = null;
 #if NETFX_CORE
 			if (type.IsEnum())
-#else
-            if (type.IsEnum) 
-#endif
 			{
-				provider = type.GetField(Enum.GetName(type, value));
+				provider = type.GetField(Enum.GetName(type, value)).ToICustomAttributeProvider();
 			}
+#else
+            if (type.IsEnum)
+            {
+                provider = type.GetField(Enum.GetName(type, value));
+            }
+#endif
 			else
 			{
 				provider = value as ICustomAttributeProvider;
@@ -101,12 +104,15 @@ namespace Pathfinding.Serialization.JsonFx
 			ICustomAttributeProvider provider = null;
 #if NETFX_CORE
             if (type.IsEnum())
+            {
+				provider = type.GetField(Enum.GetName(type, value)).ToICustomAttributeProvider();
+			}
 #else
 			if (type.IsEnum)
-#endif
 			{
 				provider = type.GetField(Enum.GetName(type, value));
 			}
+#endif
 			else
 			{
 				provider = value as ICustomAttributeProvider;

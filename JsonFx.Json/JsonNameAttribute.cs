@@ -32,6 +32,7 @@ using System;
 using System.Reflection;
 
 #if NETFX_CORE
+using Attribute=MarkerMetro.Unity.WinLegacy.Attribute;
 using MarkerMetro.Unity.WinLegacy.Reflection;
 #endif
 
