@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B5307A21-647B-451B-A9A6-08B78E1737AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsonFx</RootNamespace>
+    <AssemblyName>JsonFx.Json</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNITY3D;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="..\JsonFx.Json\License.txt">
+      <Link>License.txt</Link>
+    </Content>
+    <Content Include="..\JsonFx.Json\Readme.txt">
+      <Link>Readme.txt</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\JsonFx.Json\DataReaderProvider.cs">
+      <Link>DataReaderProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\DataWriterProvider.cs">
+      <Link>DataWriterProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\EcmaScriptIdentifier.cs">
+      <Link>EcmaScriptIdentifier.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\EcmaScriptWriter.cs">
+      <Link>EcmaScriptWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\IDataReader.cs">
+      <Link>IDataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\IDataWriter.cs">
+      <Link>IDataWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\IJsonSerializable.cs">
+      <Link>IJsonSerializable.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonDataReader.cs">
+      <Link>JsonDataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonDataWriter.cs">
+      <Link>JsonDataWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonIgnoreAttribute.cs">
+      <Link>JsonIgnoreAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonMemberAttribute.cs">
+      <Link>JsonMemberAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonNameAttribute.cs">
+      <Link>JsonNameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonOptInAttribute.cs">
+      <Link>JsonOptInAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonReader.cs">
+      <Link>JsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonReaderSettings.cs">
+      <Link>JsonReaderSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonSerializationException.cs">
+      <Link>JsonSerializationException.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonSpecifiedPropertyAttribute.cs">
+      <Link>JsonSpecifiedPropertyAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonToken.cs">
+      <Link>JsonToken.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonWriter.cs">
+      <Link>JsonWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\JsonWriterSettings.cs">
+      <Link>JsonWriterSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\TypeCoercionUtility.cs">
+      <Link>TypeCoercionUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\XmlDataReader.cs">
+      <Link>XmlDataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Json\XmlDataWriter.cs">
+      <Link>XmlDataWriter.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MarkerMetro.Unity.WinLegacy">
+      <HintPath>..\References\Metro\MarkerMetro.Unity.WinLegacy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
