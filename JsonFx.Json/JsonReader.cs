@@ -404,6 +404,17 @@ namespace Pathfinding.Serialization.JsonFx
 			}
 		}
 
+        // IZ: Added
+        public void PopulateObject(object obj)
+        {
+            object other = obj;
+
+            PopulateObject(ref other);
+
+            if(!object.ReferenceEquals(other, obj))
+                throw new InvalidOperationException("Object reference has changed, please use ref call, which you can't do because it is private :)");
+        }
+
 		/** Populates an object with serialized data.
 		 * Note that in case the object has been loaded before (another reference to it)
 		 * the passed object will be changed to the previously loaded object (this only applies
