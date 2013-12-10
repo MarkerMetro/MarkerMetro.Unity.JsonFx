@@ -31,6 +31,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -442,6 +443,7 @@ namespace Pathfinding.Serialization.JsonFx
 			{
 
 				result = this.Settings.Coercion.InstantiateObject(objectType, out memberMap);
+                Debug.WriteLine("Adding: {0}", result.ToString());
 				previouslyDeserialized.Add (result);
 
 				if (memberMap == null)
@@ -462,7 +464,8 @@ namespace Pathfinding.Serialization.JsonFx
 				// If prev != result, then the PopulateObject method has used a previously loaded object
 				// then we should not add the object to the list of deserialized objects since it
 				// already is there (the correct version of it, that is)
-				previouslyDeserialized.RemoveAt(previouslyDeserialized.Count-1);
+                Debug.WriteLine("Removing: {0}", result.ToString());
+                previouslyDeserialized.RemoveAt(previouslyDeserialized.Count-1);
 			}
 			return result;
 		}
