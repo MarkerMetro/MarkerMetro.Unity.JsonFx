@@ -33,8 +33,10 @@ using System.IO;
 
 using Pathfinding.Serialization.JsonFx;
 
-#if NETFX_CORE
+#if NETFX_CORE || SILVERLIGHT
 using MarkerMetro.Unity.WinLegacy.IO;
+using File = MarkerMetro.Unity.WinLegacy.IO.File;
+using Directory = MarkerMetro.Unity.WinLegacy.IO.Directory;
 #endif
 
 namespace Pathfinding.Serialization.JsonFx.Test.UnitTests

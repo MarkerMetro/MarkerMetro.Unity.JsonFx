@@ -38,10 +38,10 @@ using System.Text;
 
 using Pathfinding.Serialization.JsonFx;
 
-#if NETFX_CORE
+#if NETFX_CORE || SILVERLIGHT
 using MarkerMetro.Unity.WinLegacy.Collections;
 using MarkerMetro.Unity.WinLegacy.IO;
-using System.Linq;
+using File = MarkerMetro.Unity.WinLegacy.IO.File;
 #endif
 
 namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
@@ -99,7 +99,7 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
 			collectionTest.MyNested.Items["Third"] = 42;
 			collectionTest.MyNested.Items["Fourth"] = true;
 
-#if NETFX_CORE
+#if NETFX_CORE || SILVERLIGHT
             var dict = new Dictionary<object, object>();
             foreach (var key in collectionTest.MyNested.Items.Keys)
                 dict[key] = collectionTest.MyNested.Items[key];
@@ -108,7 +108,7 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
             collectionTest.MyNested.Hash = new Hashtable(collectionTest.MyNested.Items);
 #endif
 
-#if !NETFX_CORE
+#if !NETFX_CORE && !SILVERLIGHT
 			collectionTest.MyNested.Hybrid = new HybridDictionary();
 			foreach (string key in collectionTest.MyNested.Items.Keys)
 			{
@@ -444,7 +444,7 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
 
 		private Dictionary<string, object> items = null;
 		private Hashtable hash = null;
-#if !NETFX_CORE
+#if !NETFX_CORE && !SILVERLIGHT
 		private HybridDictionary hybrid = null;
 #endif
 
@@ -463,7 +463,7 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
 			get { return this.hash; }
 			set { this.hash = value; }
 		}
-#if !NETFX_CORE
+#if !NETFX_CORE && !SILVERLIGHT
 		public HybridDictionary Hybrid
 		{
 			get { return this.hybrid; }

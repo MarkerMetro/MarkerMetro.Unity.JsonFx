@@ -34,19 +34,19 @@ namespace JsonFxMetro.Tests
             }
 
             [TestMethod]
-            public void CyclicTest()
+            public void Metro_CyclicTest()
             {
                 Cyclic.RunTest(new DebugWriter(), TestFolder.Path, OutputFolder.Path);
             }
 
             [TestMethod]
-            public void JsonTextTest()
+            public void Metro_JsonTextTest()
             {
                 JsonText.RunTest(new DebugWriter(), TestFolder.Path, OutputFolder.Path);
             }
 
             [TestMethod]
-            public void StronglyTypedTest()
+            public void Metro_StronglyTypedTest()
             {
                 StronglyTyped.RunTest(new DebugWriter(), TestFolder.Path, OutputFolder.Path);
             }
