@@ -112,7 +112,17 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="..\JsonFx.Tests\Cyclic.cs">
+      <Link>Cyclic.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Tests\JsonText.cs">
+      <Link>JsonText.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Tests\StronglyTyped.cs">
+      <Link>StronglyTyped.cs</Link>
+    </Compile>
+    <Compile Include="DebugWriter.cs" />
+    <Compile Include="TestMetroMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +149,12 @@
     <Reference Include="MarkerMetro.Unity.WinLegacy">
       <HintPath>..\References\Metro\MarkerMetro.Unity.WinLegacy.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JsonFxMetro\JsonFxMetro.csproj">
+      <Project>{b5307a21-647b-451b-a9a6-08b78e1737ad}</Project>
+      <Name>JsonFxMetro</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

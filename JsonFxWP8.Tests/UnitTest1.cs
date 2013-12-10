@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using System.Diagnostics;
 
 namespace JsonFxWP8.Tests
 {
@@ -9,6 +10,7 @@ namespace JsonFxWP8.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            
         }
     }
 }
