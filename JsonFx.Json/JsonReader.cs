@@ -443,7 +443,8 @@ namespace Pathfinding.Serialization.JsonFx
 			{
 
 				result = this.Settings.Coercion.InstantiateObject(objectType, out memberMap);
-                Debug.WriteLine("Adding: {0}", result.ToString());
+                Debug.WriteLine(string.Format("Adding: {0} ({1})", result, previouslyDeserialized.Count));
+
 				previouslyDeserialized.Add (result);
 
 				if (memberMap == null)
@@ -464,7 +465,7 @@ namespace Pathfinding.Serialization.JsonFx
 				// If prev != result, then the PopulateObject method has used a previously loaded object
 				// then we should not add the object to the list of deserialized objects since it
 				// already is there (the correct version of it, that is)
-                Debug.WriteLine("Removing: {0}", result.ToString());
+                Debug.WriteLine(string.Format("Removing: {0} ({1})", result, previouslyDeserialized.Count));
                 previouslyDeserialized.RemoveAt(previouslyDeserialized.Count-1);
 			}
 			return result;
@@ -474,7 +475,10 @@ namespace Pathfinding.Serialization.JsonFx
 			// this allows specific IDictionary<string, T> to deserialize T
 #if !WINDOWS_PHONE
 			Type genericDictionary = objectType.GetInterface(JsonReader.TypeGenericIDictionary);
-			if (genericDictionary != null)
+#else
+			Type genericDictionary = objectType.GetInterface(JsonReader.TypeGenericIDictionary, false);
+#endif
+            if (genericDictionary != null)
 			{
 				Type[] genericArgs = genericDictionary.GetGenericArguments();
 				if (genericArgs.Length == 2)
@@ -492,7 +496,6 @@ namespace Pathfinding.Serialization.JsonFx
 					}
 				}
 			}
-#endif
 			return null;
 		}
 		

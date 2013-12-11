@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pathfinding.Serialization.JsonFx.Test.UnitTests;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace JsonFx.Tests
 {
@@ -34,6 +35,8 @@ namespace JsonFx.Tests
         [TestMethod]
         public void CyclicTest()
         {
+            var dict = new Dictionary<string, TestMain>();
+            var interfaces = dict.GetType().GetInterfaces();
             Cyclic.RunTest(Console.Out, TestFolder, OutputFolder);
         }
 

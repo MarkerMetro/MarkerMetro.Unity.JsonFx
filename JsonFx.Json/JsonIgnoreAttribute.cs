@@ -68,16 +68,20 @@ namespace Pathfinding.Serialization.JsonFx
 			{
 				provider = type.GetField(Enum.GetName(type, value)).ToICustomAttributeProvider();
 			}
+			else
+			{
+				provider = value.ToICustomAttributeProvider();
+			}
 #else
             if (type.IsEnum)
             {
                 provider = type.GetField(Enum.GetName(type, value));
             }
-#endif
 			else
 			{
 				provider = value as ICustomAttributeProvider;
 			}
+#endif
 
 			if (provider == null)
 			{
