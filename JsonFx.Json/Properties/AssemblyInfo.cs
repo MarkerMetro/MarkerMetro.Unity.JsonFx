@@ -48,3 +48,6 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: Guid("a3a74921-2901-456c-84f2-b0d83994d33a")]
 [assembly: ObfuscateAssembly(false, StripAfterObfuscation=false)]
+
+[assembly: AssemblyVersion("1.4.1003.3008")]
+[assembly: AssemblyFileVersion("1.4.1003.3008")]
