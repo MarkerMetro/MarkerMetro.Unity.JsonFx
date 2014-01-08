@@ -163,9 +163,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MarkerMetro.Unity.WinLegacy">
-      <HintPath>..\References\WP8\MarkerMetro.Unity.WinLegacy.dll</HintPath>
+    <Reference Include="MarkerMetro.Unity.WinLegacy, Version=1.56.0.77, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MarkerMetro.Unity.WinLegacy.1.56.0.77\lib\windowsphone8\MarkerMetro.Unity.WinLegacy.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

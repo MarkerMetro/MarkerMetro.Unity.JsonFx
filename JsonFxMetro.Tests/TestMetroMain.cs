@@ -7,6 +7,7 @@ using System.IO;
 using Windows.Storage;
 using System.Threading.Tasks;
 using Pathfinding.Serialization.JsonFx.Test.UnitTests;
+using Pathfinding.Serialization.JsonFx;
 
 namespace JsonFxMetro.Tests
 {
@@ -50,6 +51,7 @@ namespace JsonFxMetro.Tests
             {
                 StronglyTyped.RunTest(new DebugWriter(), TestFolder.Path, OutputFolder.Path);
             }
+
         }
     }
 }
