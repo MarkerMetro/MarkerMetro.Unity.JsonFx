@@ -79,9 +79,9 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
 
             var filePath = outputFolder + "/out";
 #if NETFX_CORE
-            using (StreamWriter wr2 = File.CreateText(filePath))
+            using (var wr2 = File.CreateText(filePath))
 #else
-            using (StreamWriter wr2 = new StreamWriter(filePath, false, Encoding.UTF8))
+            using (var wr2 = new StreamWriter(filePath, false, Encoding.UTF8))
 #endif
             {
                 JsonWriter wr = new JsonWriter(wr2, wsettings);
@@ -89,7 +89,7 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
                 wr.Write(arr);
             }
 
-            using (StreamReader re = File.OpenText(filePath))
+            using (var re = File.OpenText(filePath))
             {
                 JsonReaderSettings rsettings = new JsonReaderSettings();
                 rsettings.HandleCyclicReferences = true;
