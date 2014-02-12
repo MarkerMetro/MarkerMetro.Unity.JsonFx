@@ -8,6 +8,7 @@ using Windows.Storage;
 using System.Threading.Tasks;
 using Pathfinding.Serialization.JsonFx.Test.UnitTests;
 using Pathfinding.Serialization.JsonFx;
+using System.Globalization;
 
 namespace JsonFxMetro.Tests
 {
@@ -25,6 +26,7 @@ namespace JsonFxMetro.Tests
             {
                 TestFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync(Path.GetRandomFileName());
                 OutputFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync(Path.GetRandomFileName());
+                Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "fr-FR";
             }
 
             [TestCleanup]
