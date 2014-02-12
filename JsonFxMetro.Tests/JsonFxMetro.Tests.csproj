@@ -121,6 +121,7 @@
     <Compile Include="..\JsonFx.Tests\StronglyTyped.cs">
       <Link>StronglyTyped.cs</Link>
     </Compile>
+    <Compile Include="CultureInfoTests.cs" />
     <Compile Include="DebugWriter.cs" />
     <Compile Include="PathfindingTests.cs" />
     <Compile Include="TestMetroMain.cs" />
