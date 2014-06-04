@@ -62,7 +62,6 @@
     <Compile Include="TestMain.cs" />
     <Compile Include="CultureInfoTests.cs" />
     <Compile Include="Types\ITextureFilesModel.cs" />
-    <Compile Include="Types\SimpleValueObject.cs" />
     <Compile Include="Types\TextureFilesCatalog.cs" />
     <Compile Include="Types\TextureFilesModel.cs" />
   </ItemGroup>

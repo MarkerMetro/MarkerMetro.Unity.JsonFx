@@ -85,9 +85,6 @@
     <Compile Include="..\JsonFx.Tests\Types\ITextureFilesModel.cs">
       <Link>Types\ITextureFilesModel.cs</Link>
     </Compile>
-    <Compile Include="..\JsonFx.Tests\Types\SimpleValueObject.cs">
-      <Link>Types\SimpleValueObject.cs</Link>
-    </Compile>
     <Compile Include="..\JsonFx.Tests\Types\TextureFilesCatalog.cs">
       <Link>Types\TextureFilesCatalog.cs</Link>
     </Compile>
