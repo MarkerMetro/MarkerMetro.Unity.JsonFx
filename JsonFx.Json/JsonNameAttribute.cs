@@ -123,13 +123,21 @@ namespace Pathfinding.Serialization.JsonFx
 				throw new ArgumentException();
 			}
 
-			if (!Attribute.IsDefined(memberInfo, typeof(JsonNameAttribute)))
+#if NETFX_CORE
+            var attribute = memberInfo.GetCustomAttribute<JsonNameAttribute>();
+            if (attribute == null)
+            {
+                return null;
+            }
+#else
+            if (!Attribute.IsDefined(memberInfo, typeof(JsonNameAttribute)))
 			{
 				return null;
 			}
 			JsonNameAttribute attribute = (JsonNameAttribute)Attribute.GetCustomAttribute(memberInfo, typeof(JsonNameAttribute));
+#endif
 
-			return attribute.Name;
+            return attribute.Name;
 		}
 
 		///// <summary>

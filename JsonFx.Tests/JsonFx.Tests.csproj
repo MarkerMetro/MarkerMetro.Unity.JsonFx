@@ -54,12 +54,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CollectionTest.cs" />
     <Compile Include="Cyclic.cs" />
     <Compile Include="JsonText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StronglyTyped.cs" />
     <Compile Include="TestMain.cs" />
     <Compile Include="CultureInfoTests.cs" />
+    <Compile Include="Types\ITextureFilesModel.cs" />
+    <Compile Include="Types\SimpleValueObject.cs" />
+    <Compile Include="Types\TextureFilesCatalog.cs" />
+    <Compile Include="Types\TextureFilesModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JsonFx.Json\JsonFx.csproj">

@@ -1343,7 +1343,14 @@ namespace Pathfinding.Serialization.JsonFx
 		/// <returns>if has a value equivalent to the DefaultValueAttribute</returns>
 		private bool IsDefaultValue(MemberInfo member, object value)
 		{
-			DefaultValueAttribute attribute = Attribute.GetCustomAttribute(member, typeof(DefaultValueAttribute)) as DefaultValueAttribute;
+
+#if NETFX_CORE
+            var attribute = member.GetCustomAttribute<DefaultValueAttribute>();
+#else
+            DefaultValueAttribute attribute = Attribute.GetCustomAttribute(member, typeof(DefaultValueAttribute)) as DefaultValueAttribute;
+#endif
+
+			
 			if (attribute == null)
 			{
 				return false;

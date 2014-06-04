@@ -85,14 +85,23 @@ namespace Pathfinding.Serialization.JsonFx
 		/// <returns></returns>
 		public static string GetJsonSpecifiedProperty(MemberInfo memberInfo)
 		{
+#if NETFX_CORE
+            if (memberInfo == null) return null;
+            var attribute = memberInfo.GetCustomAttribute<JsonSpecifiedPropertyAttribute>();
+            if (attribute == null)
+            {
+                return null;
+            }
+#else
             if (memberInfo == null ||
-				            !Attribute.IsDefined(memberInfo, typeof(JsonSpecifiedPropertyAttribute)))	
-			{
-				return null;
-			}
-
-			JsonSpecifiedPropertyAttribute attribute = (JsonSpecifiedPropertyAttribute)Attribute.GetCustomAttribute(memberInfo, typeof(JsonSpecifiedPropertyAttribute));
-			return attribute.SpecifiedProperty;
+                            !Attribute.IsDefined(memberInfo, typeof(JsonSpecifiedPropertyAttribute)))
+            {
+                return null;
+            }
+            JsonSpecifiedPropertyAttribute attribute = (JsonSpecifiedPropertyAttribute)Attribute.GetCustomAttribute(memberInfo, typeof(JsonSpecifiedPropertyAttribute));
+           
+#endif
+            return attribute.SpecifiedProperty;
 		}
 
 		#endregion Methods

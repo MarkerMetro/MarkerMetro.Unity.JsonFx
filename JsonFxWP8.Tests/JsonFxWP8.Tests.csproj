@@ -70,6 +70,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\JsonFx.Tests\CollectionTest.cs">
+      <Link>CollectionTest.cs</Link>
+    </Compile>
     <Compile Include="..\JsonFx.Tests\Cyclic.cs">
       <Link>Cyclic.cs</Link>
     </Compile>
@@ -78,6 +81,18 @@
     </Compile>
     <Compile Include="..\JsonFx.Tests\StronglyTyped.cs">
       <Link>StronglyTyped.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Tests\Types\ITextureFilesModel.cs">
+      <Link>Types\ITextureFilesModel.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Tests\Types\SimpleValueObject.cs">
+      <Link>Types\SimpleValueObject.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Tests\Types\TextureFilesCatalog.cs">
+      <Link>Types\TextureFilesCatalog.cs</Link>
+    </Compile>
+    <Compile Include="..\JsonFx.Tests\Types\TextureFilesModel.cs">
+      <Link>Types\TextureFilesModel.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
