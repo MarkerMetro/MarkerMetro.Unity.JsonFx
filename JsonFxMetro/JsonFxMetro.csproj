@@ -182,9 +182,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MarkerMetro.Unity.WinLegacy, Version=1.6.0.304, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MarkerMetro.Unity.WinLegacy, Version=1.6.0.307, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MarkerMetro.Unity.WinLegacy.1.6.0.304\lib\netcore45\MarkerMetro.Unity.WinLegacy.dll</HintPath>
+      <HintPath>..\packages\MarkerMetro.Unity.WinLegacy.1.6.0.307\lib\netcore45\MarkerMetro.Unity.WinLegacy.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

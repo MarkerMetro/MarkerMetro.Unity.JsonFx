@@ -77,7 +77,7 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
             arr[2].b = a.b;
             for (int i = 4; i < 100; i++) arr[i] = new A();
 
-            var filePath = outputFolder + "/out";
+            var filePath = outputFolder + "/out.txt";
 #if NETFX_CORE
             using (var wr2 = File.CreateText(filePath))
 #else
@@ -88,8 +88,6 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
                 wr.Write(a);
                 wr.Write(arr);
             }
-
-           
 
             using (var re = File.OpenText(filePath))
             {

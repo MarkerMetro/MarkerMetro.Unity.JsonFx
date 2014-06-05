@@ -59,20 +59,20 @@ namespace Pathfinding.Serialization.JsonFx
 			{
 				return false;
 			}
-
-			Type type = value.GetType();
-
-			ICustomAttributeProvider provider = null;
+            Type type = value.GetType();
 #if NETFX_CORE
-			if (type.IsEnum())
-			{
-				provider = type.GetField(Enum.GetName(type, value)).ToICustomAttributeProvider();
-			}
-			else
-			{
-				provider = value.ToICustomAttributeProvider();
-			}
+            if (value is MemberInfo)
+            {
+                var mi = (MemberInfo)value;
+                return mi.GetCustomAttribute<JsonIgnoreAttribute>(true) != null;
+            }
+            else
+            {
+                var attrs = type.GetCustomAttributes(typeof(JsonIgnoreAttribute), true);
+                return attrs != null && attrs.Length > 0;
+            }
 #else
+            ICustomAttributeProvider provider = null;
             if (type.IsEnum)
             {
                 provider = type.GetField(Enum.GetName(type, value));
@@ -81,15 +81,14 @@ namespace Pathfinding.Serialization.JsonFx
 			{
 				provider = value as ICustomAttributeProvider;
 			}
-#endif
-
-			if (provider == null)
+            if (provider == null)
 			{
 				throw new ArgumentException();
 			}
 
 			return provider.IsDefined(typeof(JsonIgnoreAttribute), true);
-		}
+#endif
+        }
 
 		/// <summary>
 		/// Gets a value which indicates if should be ignored in Json serialization.
@@ -105,19 +104,19 @@ namespace Pathfinding.Serialization.JsonFx
 
 			Type type = value.GetType();
 
-			ICustomAttributeProvider provider = null;
-#if NETFX_CORE
+			
+#if !UNITY3D && !NETFX_CORE
             if (type.IsEnum())
             {
 				provider = type.GetField(Enum.GetName(type, value)).ToICustomAttributeProvider();
 			}
-#else
+
+            ICustomAttributeProvider provider = null;
 			if (type.IsEnum)
 			{
 				provider = type.GetField(Enum.GetName(type, value));
 			}
-#endif
-			else
+                    else
 			{
 				provider = value as ICustomAttributeProvider;
 			}
@@ -127,12 +126,12 @@ namespace Pathfinding.Serialization.JsonFx
 				throw new ArgumentException();
 			}
 
-#if !UNITY3D
+
 			return provider.IsDefined(typeof(XmlIgnoreAttribute), true);
-#else
-			return false;
 #endif
-		}
+			return false;
+
+        }
 
 		#endregion Methods
 	}
