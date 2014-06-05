@@ -87,7 +87,7 @@ namespace Pathfinding.Serialization.JsonFx
 		{
 #if NETFX_CORE
             if (memberInfo == null) return null;
-            var attribute = memberInfo.GetCustomAttribute<JsonSpecifiedPropertyAttribute>();
+            var attribute = memberInfo.GetCustomAttribute<JsonSpecifiedPropertyAttribute>(true);
             if (attribute == null)
             {
                 return null;

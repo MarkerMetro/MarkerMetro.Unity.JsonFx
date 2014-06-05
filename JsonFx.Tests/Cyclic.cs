@@ -89,6 +89,8 @@ namespace Pathfinding.Serialization.JsonFx.Test.UnitTests
                 wr.Write(arr);
             }
 
+           
+
             using (var re = File.OpenText(filePath))
             {
                 JsonReaderSettings rsettings = new JsonReaderSettings();

@@ -1312,7 +1312,7 @@ namespace Pathfinding.Serialization.JsonFx
 #else
 				if (member.GetCustomAttributes(typeof(JsonMemberAttribute),true).Length == 0) {
 #endif
-					return true;
+                    return true;
 				}
 			}
 			
@@ -1345,7 +1345,7 @@ namespace Pathfinding.Serialization.JsonFx
 		{
 
 #if NETFX_CORE
-            var attribute = member.GetCustomAttribute<DefaultValueAttribute>();
+            var attribute = member.GetCustomAttribute<DefaultValueAttribute>(true);
 #else
             DefaultValueAttribute attribute = Attribute.GetCustomAttribute(member, typeof(DefaultValueAttribute)) as DefaultValueAttribute;
 #endif

@@ -34,6 +34,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
+using System.Linq;
 
 #if NETFX_CORE || WINDOWS_PHONE
 using MarkerMetro.Unity.WinLegacy.Collections;
@@ -207,6 +208,7 @@ namespace Pathfinding.Serialization.JsonFx
 
 			// load properties into property map
 			PropertyInfo[] properties = objectType.GetProperties();
+
 			foreach (PropertyInfo info in properties)
 			{
 				if (!info.CanRead || !info.CanWrite)
@@ -230,8 +232,9 @@ namespace Pathfinding.Serialization.JsonFx
 				}
 			}
 
-			// load public fields into property map
-			FieldInfo[] fields = objectType.GetFields();
+            // load public fields into property map
+            FieldInfo[] fields = objectType.GetFields();
+
 			foreach (FieldInfo info in fields)
 			{
 				if (!info.IsPublic)
