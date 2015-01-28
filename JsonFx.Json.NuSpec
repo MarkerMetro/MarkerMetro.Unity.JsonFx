@@ -3,12 +3,12 @@
   <metadata>
     <id>MarkerMetro.Unity.JsonFx</id>
     <version>$version$</version>
-    <title>JsonFx Unity/WRT/WP8 Library</title>
-    <description>MarkerMetro's JsonFx port for Unity, WinRT and Windows Phone 8</description>
+    <title>MarkerMetro.Unity.JsonFx</title>
+    <description>JsonFx Windows Store and Windows Phone Unity Plugin</description>
     <authors>MarkerMetro</authors>
     <owners>MarkerMetro</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright MarkerMetro© 2013, 2014</copyright>
+    <copyright>Copyright Marker Metro © 2015</copyright>
     <projectUrl>https://github.com/MarkerMetro/MarkerMetro.Unity.JsonFx</projectUrl>
     <dependencies>
       <dependency id="MarkerMetro.Unity.WinLegacy"/>
