@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +22,6 @@ namespace JsonFxMetro.Tests
         [TestMethod]
 #if NETFX_CORE
         public void MetroCollectionTest_sample()
-#elif WINDOWS_PHONE
-        public void WP8CollectionTest_sample()
 #else
         public void CollectionTest_sample()
 #endif
@@ -41,8 +38,6 @@ namespace JsonFxMetro.Tests
         [TestMethod]
 #if NETFX_CORE
         public void MetroAbstractCollectionTest_sample()
-#elif WINDOWS_PHONE
-        public void WP8AbstractCollectionTest_sample()
 #else
         public void AbstractCollectionTest_sample()
 #endif
