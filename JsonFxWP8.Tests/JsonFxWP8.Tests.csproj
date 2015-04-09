@@ -156,12 +156,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JsonFxWP8\JsonFxWP8.csproj">
-      <Project>{89FF276E-5570-43E3-8C44-92F003D343DF}</Project>
-      <Name>JsonFxWP8</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>

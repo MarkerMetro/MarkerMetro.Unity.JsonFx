@@ -39,9 +39,9 @@ using System.Text;
 using Pathfinding.Serialization.JsonFx;
 
 #if NETFX_CORE || SILVERLIGHT
-using MarkerMetro.Unity.WinLegacy.Collections;
-using MarkerMetro.Unity.WinLegacy.IO;
-using File = MarkerMetro.Unity.WinLegacy.IO.File;
+using MarkerMetro.Unity.WinLegacy.Plugin.Collections;
+using MarkerMetro.Unity.WinLegacy.Plugin.IO;
+using File = MarkerMetro.Unity.WinLegacy.Plugin.IO.File;
 #endif
 
 namespace Pathfinding.Serialization.JsonFx.Test.UnitTests

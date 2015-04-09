@@ -37,7 +37,7 @@ using System.Reflection;
 using System.Linq;
 
 #if NETFX_CORE || WINDOWS_PHONE
-using MarkerMetro.Unity.WinLegacy.Collections;
+using MarkerMetro.Unity.WinLegacy.Plugin.Collections;
 #endif
 
 #if NETFX_CORE

@@ -108,6 +108,7 @@
     <Content Include="..\JsonFx.Json\Readme.txt">
       <Link>Readme.txt</Link>
     </Content>
+    <Content Include="MarkerMetro.Unity.WinLegacy.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\JsonFx.Json\DataReaderProvider.cs">

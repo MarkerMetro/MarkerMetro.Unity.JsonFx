@@ -42,7 +42,7 @@ using System.Xml;
 
 
 #if NETFX_CORE
-using MarkerMetro.Unity.WinLegacy.IO;
+using MarkerMetro.Unity.WinLegacy.Plugin.IO;
 using MarkerMetro.Unity.WinLegacy.Reflection;
 using System.Linq;
 #endif
@@ -134,7 +134,7 @@ namespace Pathfinding.Serialization.JsonFx
 				throw new ArgumentNullException("settings");
 			}
 
-			this.Writer = new MarkerMetro.Unity.WinLegacy.IO.StreamWriter(output, Encoding.UTF8);
+			this.Writer = new MarkerMetro.Unity.WinLegacy.Plugin.IO.StreamWriter(output, Encoding.UTF8);
 			this.settings = settings;
 			this.Writer.NewLine = this.settings.NewLine;
 		}
@@ -165,7 +165,7 @@ namespace Pathfinding.Serialization.JsonFx
 			}
 
 			Stream stream = new FileStream(outputFileName, FileMode.Create, FileAccess.Write, FileShare.Read);
-			this.Writer = new MarkerMetro.Unity.WinLegacy.IO.StreamWriter(stream, Encoding.UTF8);
+			this.Writer = new MarkerMetro.Unity.WinLegacy.Plugin.IO.StreamWriter(stream, Encoding.UTF8);
 			this.settings = settings;
 			this.Writer.NewLine = this.settings.NewLine;
 		}

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 
 #if NETFX_CORE
-using MarkerMetro.Unity.WinLegacy.IO;
+using MarkerMetro.Unity.WinLegacy.Plugin.IO;
 #endif
 
 #pragma warning disable 649
