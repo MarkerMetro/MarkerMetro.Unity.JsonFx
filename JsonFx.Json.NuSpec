@@ -18,7 +18,6 @@
   </metadata>
   <files>
     <file src="JsonFx.Json\bin\Release\JsonFx.Json.dll" target="lib\net35\"/>
-    <file src="JsonFxWP8\Bin\Release\JsonFx.Json.dll" target="lib\windowsphone8\"/>
     <file src="JsonFxMetro\bin\Release\JsonFx.Json.dll" target="lib\netcore45\"/>
   </files>
 </package>
