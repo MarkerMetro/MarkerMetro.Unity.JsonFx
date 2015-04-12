@@ -36,8 +36,8 @@ using System.Globalization;
 using System.Reflection;
 using System.Linq;
 
-#if NETFX_CORE || WINDOWS_PHONE
-using MarkerMetro.Unity.WinLegacy.Collections;
+#if NETFX_CORE
+using MarkerMetro.Unity.WinLegacy.Plugin.Collections;
 #endif
 
 #if NETFX_CORE
@@ -448,7 +448,7 @@ namespace Pathfinding.Serialization.JsonFx
 				return new TimeSpan((long)this.CoerceType(typeof(Int64), value));
             }
 
-#if !WINDOWS_PHONE && !NETFX_CORE
+#if !NETFX_CORE
             TypeConverter converter = TypeDescriptor.GetConverter(targetType);
 			if (converter.CanConvertFrom(actualType))
 			{

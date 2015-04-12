@@ -37,8 +37,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-#if NETFX_CORE || WINDOWS_PHONE
-using MarkerMetro.Unity.WinLegacy.Collections;
+#if NETFX_CORE
+using MarkerMetro.Unity.WinLegacy.Plugin.Collections;
 #endif
 
 #if NETFX_CORE 
@@ -473,11 +473,9 @@ namespace Pathfinding.Serialization.JsonFx
 		
 		private Type GetGenericDictionaryType (Type objectType) {
 			// this allows specific IDictionary<string, T> to deserialize T
-#if !WINDOWS_PHONE
+
 			Type genericDictionary = objectType.GetInterface(JsonReader.TypeGenericIDictionary);
-#else
-			Type genericDictionary = objectType.GetInterface(JsonReader.TypeGenericIDictionary, false);
-#endif
+
             if (genericDictionary != null)
 			{
 				Type[] genericArgs = genericDictionary.GetGenericArguments();
@@ -506,9 +504,6 @@ namespace Pathfinding.Serialization.JsonFx
 				throw new JsonDeserializationException(JsonReader.ErrorExpectedObject, this.index);
             }
 
-#if WINDOWS_PHONE
-			IDictionary idict = result as IDictionary;
-#else
             IDictionary idict = result as IDictionary;
 
 			if (idict == null && objectType.GetInterface(JsonReader.TypeGenericIDictionary) != null )
@@ -517,7 +512,6 @@ namespace Pathfinding.Serialization.JsonFx
 					String.Format(JsonReader.ErrorGenericIDictionary, objectType),
 					this.index);
 			}
-#endif
 
 			JsonToken token;
 			do

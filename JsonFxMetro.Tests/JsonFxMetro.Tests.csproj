@@ -166,6 +166,7 @@
     <Content Include="Images\UnitTestStoreLogo.scale-100.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MarkerMetro.Unity.WinLegacy.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JsonFxMetro\JsonFxMetro.csproj">
