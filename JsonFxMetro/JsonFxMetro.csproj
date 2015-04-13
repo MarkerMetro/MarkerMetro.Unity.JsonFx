@@ -91,7 +91,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <DefineConstants>TRACE;UNITY3D;NETFX_CORE</DefineConstants>
     <Optimize>true</Optimize>
     <NoWarn>;2008</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -108,7 +108,6 @@
     <Content Include="..\JsonFx.Json\Readme.txt">
       <Link>Readme.txt</Link>
     </Content>
-    <Content Include="MarkerMetro.Unity.WinLegacy.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\JsonFx.Json\DataReaderProvider.cs">
@@ -183,8 +182,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MarkerMetro.Unity.WinLegacy, Version=1.8.0.18, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MarkerMetro.Unity.WinLegacy">
       <HintPath>..\packages\MarkerMetro.Unity.WinLegacy.1.8.0.18\lib\netcore45\MarkerMetro.Unity.WinLegacy.dll</HintPath>
     </Reference>
   </ItemGroup>

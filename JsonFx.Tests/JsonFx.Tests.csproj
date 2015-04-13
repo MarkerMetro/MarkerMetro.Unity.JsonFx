@@ -74,9 +74,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MarkerMetro.Unity.WinLegacy.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>
